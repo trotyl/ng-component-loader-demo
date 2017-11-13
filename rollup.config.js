@@ -9,6 +9,7 @@ const globals = {
   '@angular/core': 'ng.core',
   '@angular/common': 'ng.common',
   '@angular/compiler': 'ng.compiler',
+  '@angular/forms': 'ng.forms',
   '@angular/platform-browser': 'ng.platformBrowser',
   '@angular/platform-browser/animations': 'ng.platformBrowser.animations',
   'rxjs/Observable': 'Rx',
