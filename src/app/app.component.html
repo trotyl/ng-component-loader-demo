@@ -7,24 +7,24 @@
 <main>
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Component URL">
+      <input matInput placeholder="Component URL" [(ngModel)]="url" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
-    <button mat-raised-button color="primary">Load</button>
+    <button mat-raised-button color="primary" (click)="load(url)">Load</button>
   </form>
 
   <mat-card class="example-card">
     <mat-card-header>
       <mat-card-title>Current Component URL: </mat-card-title>
-      <mat-card-subtitle>http://baidu.com</mat-card-subtitle>
+      <mat-card-subtitle>{{ loadedUrl }}</mat-card-subtitle>
     </mat-card-header>
     <hr>
     <mat-card-content>
-      <p *ngIf="true">No component loaded.</p>
+      <p *ngIf="!hasContent">No component loaded.</p>
       <app-component-outlet></app-component-outlet>
     </mat-card-content>
     <hr>
     <mat-card-actions>
-      <button mat-button>Remove</button>
+      <button mat-button (click)="clear()">Clear</button>
     </mat-card-actions>
   </mat-card>
 </main>
